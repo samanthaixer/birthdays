@@ -13,7 +13,7 @@ class BirthdayList
   def display_birthdays
     birthday_string = ""
     @birthday_list.each do |birthday|
-      birthday_string << "Name: #{birthday[:name]} Birthday: #{birthday[:birthday]}\n "
+      birthday_string << "Name: #{birthday[:name]} Birthday: #{birthday[:birthday].to_s}\n "
     end
     return birthday_string
   end

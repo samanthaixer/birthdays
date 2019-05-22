@@ -8,14 +8,14 @@ describe BirthdayList do
     it { is_expected.to respond_to(:store) }
 
     it 'should return "birthday stored" when store_birthday is called' do
-      expect(BirthdayList.new.store("Sam", "19/03/1982")).to eq "Birthday stored!"
+      expect(BirthdayList.new.store("Sam", Birthday.new("19/03/1982"))).to eq "Birthday stored!"
     end
 
     it 'should print a list of names and birthdays when display_birthdays is called' do
       birthday_list = BirthdayList.new
-      birthday_list.store("Sam", "19/03/1982")
+      birthday_list.store("Sam", Birthday.new("19/03/1982"))
       expect(birthday_list.display_birthdays).to eq "Name: Sam Birthday: 19/03/1982\n "
-      birthday_list.store("Riya", "14/7/1995")
+      birthday_list.store("Riya", Birthday.new("14/7/1995"))
       expect(birthday_list.display_birthdays).to eq "Name: Sam Birthday: 19/03/1982\n Name: Riya Birthday: 14/7/1995\n "
     end
 
